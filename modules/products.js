@@ -1,6 +1,5 @@
 import config from "./config";
 /*import { verifyTokenAcces } from "./authorizationToken";*/
-import { json } from "body-parser";
 
 
 const tokenPass = "LeMotDePasseEstMotDePasse"

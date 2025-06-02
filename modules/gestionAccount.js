@@ -1,4 +1,4 @@
-const API = "http://localhost:3000" 
+import config from "./config";
 
 
 async function CreateAccount(){
@@ -7,7 +7,7 @@ async function CreateAccount(){
             password: "admin"
         };
     
-    res = await fetch (`${API}/signin/`, {
+    res = await fetch (`${config}/signin/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -23,11 +23,12 @@ async function LoginAccount() {
         password: document.querySelector('#password')          // TODO: Ajouter l'ID dans l'Html -> formulaire login
     };
 
-    res = await fetch(`${API}/signin/`,{
+    res = await fetch(`${config}/signin/`,{
         method: 'POST',
         headers: {
             'Content-Type':'application/json'
         },
-        body:JSON.stringify(account);
+        body:JSON.stringify(account),
     });
 }
+
