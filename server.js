@@ -5,10 +5,19 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 3000;
 const SECRET = 'your_jwt_secret';
+const path = require('path');
 
 const cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use(express.static(__dirname));
+
+//route pour la page d'accueil
+app.get('/', (req, res) => {
+  console.log('Serving:', path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 app.use((req,res,next) => {
     console.log("req");
