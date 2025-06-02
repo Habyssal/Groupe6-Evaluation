@@ -39,15 +39,15 @@ async function userCreateProduct(token, name, categorieID) {
 //get Product
 async function getAllProduct() {
     try {
-    const res = await fetch(`${config}/produits/`, {
-        method:"GET",
-        headers:{"content-type":"application/json"}
-    })
-    const data = await res.json();
-    console.log('Liste des produits par défault :', data);
-    }
-    catch (error) {
+        const res = await fetch(`${config}/produits/`, {
+            method: "GET",
+            headers: { "content-type": "application/json" }
+        });
+        const data = await res.json();
+        return data; //retourne la liste
+    } catch (error) {
         console.log('Erreur lors de la récupération des produits :', error);
+        return [];
     }
 };
 

@@ -1,5 +1,6 @@
 import config from "./config";
 
+//GET categories 
 async function getCategories() {
     try{
         const response = await fetch(`${config}/categories`, {
@@ -15,6 +16,7 @@ async function getCategories() {
 
 getCategories();
 
+//GET categories id
 async function getCategoryById(categoryId) {
     try {
         const response = await fetch(`${config}/categories`, {
@@ -28,4 +30,4 @@ async function getCategoryById(categoryId) {
     }
 }
 
-getCategoryById(1);
+getCategoryById();
