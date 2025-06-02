@@ -10,6 +10,8 @@ const addButton = document.querySelector(".add-product");
 
 const token = "LeMotDePasseEstMotDePasse";
 
+addButton.disabled = !(nameInput.value && categoryInput.value);
+
 form.addEventListener("input", () => {
     addButton.disabled = !(nameInput.value && categoryInput.value);
 });
