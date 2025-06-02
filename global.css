@@ -1,0 +1,24 @@
+:root {
+    --background-main: #000;
+    --background-input: #000;
+    --border-color: #717171;
+    --text-main: #fff;
+    --text-secondary: #5e5e5e;
+    --font-main: "K2D-Medium", sans-serif;
+    --gradient-btn: linear-gradient(90deg, #324a5f 0%, #1b2a41 100%);
+}
+
+.texture {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(circle, #ccc9dc 1.2px, transparent 1.2px),
+        radial-gradient(circle, #fff 1.2px, transparent 1.2px);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+    opacity: 0.13;
+}

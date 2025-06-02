@@ -1,0 +1,122 @@
+html, body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.auth, .auth * {
+    box-sizing: border-box;
+}
+
+.auth {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-main);
+    font-family: var(--font-main);
+}
+
+.form {
+    background: var(--background-main);
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 680px;
+    height: 360px;
+    position: relative;
+    margin: 0;
+}
+
+.auth2,
+.mail,
+.mdp,
+.connexion-frame {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth2 {
+    padding: 16px 10px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.authentification {
+    color: var(--text-main);
+    text-align: center;
+    font-family: var(--font-main);
+    font-size: 36px;
+    font-weight: 500;
+    flex: 1;
+}
+
+.mail,
+.mdp {
+    background: var(--background-input);
+    padding: 10px 16px;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.email,
+.password {
+    color: var(--text-secondary);
+    text-align: center;
+    font-family: var(--font-main);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.connexion-frame {
+    justify-content: center;
+    cursor: pointer;
+}
+
+.connexion {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px 32px;
+    color: var(--text-main);
+    background: var(--gradient-btn);
+    border: none;
+    border-radius: 6px;
+    font-family: var(--font-main);
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, opacity 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    opacity: 1;
+}
+
+.connexion:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--background-input);
+}
+
+input.email,
+input.password {
+    all: unset;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 0;
+    color: var(--text-main);
+    background: transparent;
+    font-size: 16px;
+    border-radius: 4px;
+}
