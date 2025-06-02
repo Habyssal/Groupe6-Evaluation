@@ -14,7 +14,7 @@ function createProductCard(product) {
 
 async function displayProducts() {
     const products = await getAllProduct();
-    container.innerHTML = ""; // Vide le conteneur
+    container.innerHTML = ""; //vide le conteneur
     products.forEach(product => {
         const card = createProductCard(product);
         container.appendChild(card);
