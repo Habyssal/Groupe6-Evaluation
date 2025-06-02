@@ -28,7 +28,7 @@ async function LoginAccount() {
         headers: {
             'Content-Type':'application/json'
         },
-        body:JSON.stringify(account),
+        body:JSON.stringify(account)
     });
 }
 
