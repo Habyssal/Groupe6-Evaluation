@@ -36,8 +36,64 @@ async function userCreateProduct(token) {
     }
     return res.status(403).json({ error: 'Token invalide' });
 };
-//
+
+//get Product
+async function getAllProduct() {
+    try {
+    const res = await fetch(`${config}/produits/`, {
+        method:"GET",
+        headers:{"content-type":"application/json"}
+    })
+    const data = await res.json();
+    console.log('Liste des produits par défault :', data);
+    }
+    catch (error) {
+        console.log('Erreur lors de la récupération des produits :', error);
+    }
+};
+
+async function getProducyByID(id) {
+    try {
+        const res = await fetch(`${config}/produits/${id}`, {
+            method:"GET",
+            headers:{"content-type":"application/json"}
+        })
+       const data = await res.json();
+       console.log('Liste des produits par id :', data);
+    }
+    catch (error) {
+        console.log('Erreur lors de la récupération des produits :', error);
+    }
+};
+
+async function getProducyByCategories(categorieID) {
+    try {
+        const res = await fetch(`${config}/produits/categorie${categorieID}`, {
+            method:"GET",
+            headers:{"content-type":"application/json"}
+        })
+       const data = await res.json();
+       console.log('Liste des produits par catégories :', data);
+    }
+    catch (error) {
+        console.log('Erreur lors de la récupération des produits :', error);
+    }
+};
+
+async function getProducyByPage(term) {
+    try {
+        const res = await fetch(`${config}/produits/1/${term}`, {
+            method:"GET",
+            headers:{"content-type":"application/json"}
+        })
+       const data = await res.json();
+       console.log('Liste des produits par term :', data);
+    }
+    catch (error) {
+        console.log('Erreur lors de la récupération des produits :', error);
+    }
+};
 
 createDefaultProducts(tokenPass);
 
-export {createDefaultProducts, userCreateProduct};
+export {createDefaultProducts, userCreateProduct, getAllProduct, getProducyByCategories, getProducyByID, getProducyByPage};
