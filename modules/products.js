@@ -20,21 +20,20 @@ async function createDefaultProducts(token) {
     return data;
 };
 
-
 //partie ADD Product USER OnClick Button
-async function userCreateProduct(token) {
-    if (token===tokenPass) {
-        const product = [{name: /*document.getElementById('formProduct')*/"test", categorieID: /*document.getElementById('formCategoriesSelect')*/1}];
-        const res = await fetch(`${config}/produits/` , {
-            method:"POST",
-            headers : {"content-type": 'application/json', 'authorization' : `Bearer ${token}`},
-            body : json.stringify(product)
+async function userCreateProduct(token, name, categorieID) {
+    if (token === tokenPass) {
+        const product = { name, categorieID };
+        const res = await fetch(`${config}/produits/`, {
+            method: "POST",
+            headers: { "content-type": "application/json", "authorization": `Bearer ${token}` },
+            body: JSON.stringify(product)
         });
         const data = await res.json();
-
         return data;
     }
-    return res.status(403).json({ error: 'Token invalide' });
+    // Erreur côté client, donc on lance une exception
+    throw new Error("Token invalide");
 };
 
 //get Product

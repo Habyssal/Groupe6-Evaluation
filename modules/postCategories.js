@@ -5,7 +5,7 @@ async function createCategories(token) {
     const categoryIds = [];
 
     for (const category of categories) {
-        const response = await fetch(`${config}`, {
+        const response = await fetch(`${config}/categories`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
             body: JSON.stringify({ name: category })
