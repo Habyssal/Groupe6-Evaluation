@@ -204,6 +204,14 @@ html, body, .list-item-body {
   margin-bottom: 8px;
 }
 
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    background: #fff;
+}
+
 /* Pour Chrome, Edge, Safari */
 .list::-webkit-scrollbar {
   width: 8px;
